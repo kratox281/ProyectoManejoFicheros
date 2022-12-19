@@ -3,10 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+  h1 {color:red;
+  		text-align:center;}
+</style>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<h1 style="color:red"><center><%= exception.getMessage()%></center></h1>
+<h1><%= exception.getMessage() %></h1><br>
+<hr>
+<p><%= exception.getStackTrace() %></p>
 </body>
 </html>
