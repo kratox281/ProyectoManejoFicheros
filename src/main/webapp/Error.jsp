@@ -11,8 +11,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1><%= exception.getMessage() %></h1><br>
+<h1><%= exception.getMessage() %></h1>
 <hr>
-<p><%= exception.getStackTrace() %></p>
+<p><% exception.printStackTrace(new java.io.PrintWriter(out));%>
+	</p>
 </body>
 </html>
