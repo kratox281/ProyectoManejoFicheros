@@ -21,20 +21,32 @@ public class ServletAccesoDA extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String formato;
+		if(request.getParameter("formato")!=null) {
+			formato = request.getParameter("formato");
+			switch (formato) {
+				case "XLS": {
+					request.getRequestDispatcher("DatosAbiertosXLS.jsp").forward(request, response);
+					break;
+				}
+				case "CSV":{
+					request.getRequestDispatcher("DatosAbiertosCSV.jsp").forward(request, response);
+					break;
+				}
+				case "JSON":{
+					request.getRequestDispatcher("DatosAbiertosJSON.jsp").forward(request, response);
+					break;
+				}
+				case "XML":{
+					request.getRequestDispatcher("DatosAbiertosXML.jsp").forward(request, response);
+					break;
+				}
+			default:
+				throw new IllegalArgumentException("Unexpected value: " + formato);
+			}
+		}
 	}
 
 }
