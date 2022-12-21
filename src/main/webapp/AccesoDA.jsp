@@ -30,12 +30,9 @@
                         <input type="submit">
                     </td>
                     <td>
-                        Dato 1:<input type="text" name="dato" /><br>
-                        Dato 2:<input type="text" name="dato" /><br>
-                        Dato 3:<input type="text" name="dato" /><br>
-                        Dato 4:<input type="text" name="dato" /><br>
-                        Dato 5:<input type="text" name="dato" /><br>
-                        Dato 6:<input type="text" name="dato" /><br>
+                        *Año de la estadistica:<input type="text" name="dato" /><br>
+                        Hombres:<input type="text" name="dato" /><br>
+                        Mujeres:<input type="text" name="dato" /><br>
                         <p style="color: red;">Los campos con (*) son obligatorios</p>
                     </td>
                 </tr>
