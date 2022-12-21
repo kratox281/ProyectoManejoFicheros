@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1 align="center">Tratamiento de ficheros</h1>
-    <form action="ServletAccesoDA" method="">
+    <form action="ServletAccesoDA" method="post">
         <table align="center">
             <tbody>
                 <tr>
@@ -38,7 +38,6 @@
                 </tr>
             </tbody>
         </table>
-       
     </form>
   
 </body>
