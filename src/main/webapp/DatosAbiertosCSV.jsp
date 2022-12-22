@@ -5,7 +5,6 @@
 List<String> datos;
 if(request.getAttribute("datos") != null) datos = (List<String>)request.getAttribute("datos"); 
 else datos= null;
-
 %>
 <!DOCTYPE html>
 <html>
@@ -14,6 +13,6 @@ else datos= null;
 <title>Insert title here</title>
 </head>
 <body>
-
+<p>HOLAAAAAAAAAAAAAAAAAAAA</p>
 </body>
 </html>

@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,32 +29,52 @@ public class ServletAccesoDA extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String formato;
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html;charset=UTF-8");
 		List<String> datos = CargarDatos(request, response);
+		String opcion = request.getParameter("opcion");
 		if(datos != null) {
 			request.setAttribute("datos", datos);
+			request.removeAttribute("datos");
 		}
-		if(request.getParameter("formato")!=null) {
+		else {
+			request.setAttribute("datos", "null");
+		}
+		
+		if(opcion != null) {
+			request.setAttribute("opcion", opcion);
+			request.removeAttribute("opcion");
+		}
+		else {
+			request.setAttribute("opcion", "null");
+		}
+		
+		if(request.getParameter("formato")!=null && datos != null && opcion != null) {
+			request.removeAttribute("opcion");
+			request.removeAttribute("datos");
 			formato = request.getParameter("formato");
 			switch (formato) {
 				case "XLS": {
-					request.getRequestDispatcher("DatosAbiertosXLS.jsp").forward(request, response);
+					request.getRequestDispatcher("/DatosAbiertosXLS.jsp").forward(request, response);
 					break;
 				}
 				case "CSV":{
-					request.getRequestDispatcher("DatosAbiertosCSV.jsp").forward(request, response);
+					request.getRequestDispatcher("/DatosAbiertosCSV.jsp").forward(request, response);
 					break;
 				}
 				case "JSON":{
-					request.getRequestDispatcher("DatosAbiertosJSON.jsp").forward(request, response);
+					request.getRequestDispatcher("/DatosAbiertosJSON.jsp").forward(request, response);
 					break;
 				}
 				case "XML":{
-					request.getRequestDispatcher("DatosAbiertosXML.jsp").forward(request, response);
+					request.getRequestDispatcher("/DatosAbiertosXML.jsp").forward(request, response);
 					break;
 				}
 			default:
 				throw new IllegalArgumentException("Unexpected value: " + formato);
 			}
+		} else {
+			request.getRequestDispatcher("/AccesoDA.jsp").forward(request, response);
 		}
 	}
 	
@@ -63,12 +84,11 @@ public class ServletAccesoDA extends HttpServlet {
 	//3. MUJERES
 	List<String> CargarDatos(HttpServletRequest request, HttpServletResponse response) {
 		List<String> datos = new ArrayList<>();
-		
 		for (String string : request.getParameterValues("dato")) {
 			if(string != null && string != "" && isNumeric(string)) {
 				datos.add(string);
 			} else {
-				datos.add("0");
+				return null;
 			}
 		}
 		return datos;
@@ -81,6 +101,6 @@ public class ServletAccesoDA extends HttpServlet {
 		    return true;
 		  } catch(NumberFormatException e){
 		    return false;
-		  }  
+		  }
 	}
 }
