@@ -34,24 +34,22 @@ public class ServletAccesoDA extends HttpServlet {
 		List<String> datos = CargarDatos(request, response);
 		String opcion = request.getParameter("opcion");
 		if(datos != null) {
-			request.setAttribute("datos", datos);
 			request.removeAttribute("datos");
+			request.setAttribute("datos", datos);
 		}
 		else {
 			request.setAttribute("datos", "null");
 		}
 		
 		if(opcion != null) {
-			request.setAttribute("opcion", opcion);
 			request.removeAttribute("opcion");
+			request.setAttribute("opcion", opcion);
 		}
 		else {
 			request.setAttribute("opcion", "null");
 		}
 		
 		if(request.getParameter("formato")!=null && datos != null && opcion != null) {
-			request.removeAttribute("opcion");
-			request.removeAttribute("datos");
 			formato = request.getParameter("formato");
 			switch (formato) {
 				case "XLS": {
