@@ -1,28 +1,28 @@
 package mainPackage;
 
 public class EstadisticaAnual {
-	String anio;
-	String hombres;
-	String mujeres;
-	public String getAnio() {
+	int anio;
+	int hombres;
+	int mujeres;
+	public int getAnio() {
 		return anio;
 	}
-	public void setAnio(String anio) {
+	public void setAnio(int anio) {
 		this.anio = anio;
 	}
-	public String getHombres() {
+	public int getHombres() {
 		return hombres;
 	}
-	public void setHombres(String hombres) {
+	public void setHombres(int hombres) {
 		this.hombres = hombres;
 	}
-	public String getMujeres() {
+	public int getMujeres() {
 		return mujeres;
 	}
-	public void setMujeres(String mujeres) {
+	public void setMujeres(int mujeres) {
 		this.mujeres = mujeres;
 	}
-	public EstadisticaAnual(String anio, String hombres, String mujeres) {
+	public EstadisticaAnual(int anio, int hombres, int mujeres) {
 		super();
 		this.anio = anio;
 		this.hombres = hombres;
