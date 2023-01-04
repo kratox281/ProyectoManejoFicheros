@@ -51,6 +51,7 @@ public class ServletAccesoDA extends HttpServlet {
 					request.removeAttribute("datos");
 					request.setAttribute("datos", estadistica);
 					redireccionar = true;
+					request.setAttribute("datosLista", DatosLista(request, response));
 				}
 			}
 		}
@@ -97,6 +98,19 @@ public class ServletAccesoDA extends HttpServlet {
 		}
 		EstadisticaAnual estadistica = new EstadisticaAnual(datos.get(0), datos.get(1), datos.get(2));
 		return estadistica;
+	}
+	
+	public List<String> DatosLista(HttpServletRequest request, HttpServletResponse response) {
+		List<String> datos = new ArrayList<>();
+		for (String string : request.getParameterValues("dato")) {
+			if(string != null && string != "" && isNumeric(string)) {
+				datos.add(string);
+			} else {
+				return null;
+			}
+		}
+		
+		return datos;
 	}
 	
 	//MÉTODO PARA COMPROBAR SI ES UN NÚMERO ENTERO
