@@ -13,7 +13,8 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="libs/json-20220924.jar"/>
 	<classpathentry kind="lib" path="libs/gson-2.8.2.jar"/>
+	<classpathentry kind="lib" path="libs/commons-lang3-3.12.0.jar"/>
+	<classpathentry kind="lib" path="libs/opencsv-5.7.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

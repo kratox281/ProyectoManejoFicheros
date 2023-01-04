@@ -37,14 +37,17 @@
                 </tr>
                 <tr>
                 	<td>
-                		<%if(request.getAttribute("opcion") == "null"){
+                		<%
+                		if(request.getAttribute("opcion") == "null"){
 					  	%>
 					  	<p style="color:red;">*Tienes que elegir una opción</p>
 					  	<%} %>
-					  	<%if(request.getAttribute("datos") == "null"){
+					  	<%
+					  	if(request.getAttribute("datos") == "null"){
 					  	%>
 					  	<p style="color:red;">*Tienes que completar todos los datos correctamente <br> (todos los campos con * deben estar rellenados)</p>
-					  	<%} %>
+					  	<%}%>
+					  	
                 	</td>
                 </tr>
             </tbody>

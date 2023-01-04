@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -25,31 +27,35 @@ public class ServletAccesoDA extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-    //LEEMOS QUE FORMATO QUIERE EL USUARIO Y LE REEDIRIGIMOS EL ATRIBUTO SE LLAMA "DATOS"
+    //LEEMOS QUE FORMATO QUIERE EL USUARIO Y LE REEDIRIGIMOS, EL ATRIBUTO SE LLAMA "DATOS"
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String formato;
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html;charset=UTF-8");
-		List<String> datos = CargarDatos(request, response);
+		EstadisticaAnual estadistica = CargarDatos(request, response);
 		String opcion = request.getParameter("opcion");
-		if(datos != null) {
-			request.removeAttribute("datos");
-			request.setAttribute("datos", datos);
-		}
-		else {
-			request.setAttribute("datos", "null");
-		}
+		boolean redireccionar = false;
 		
-		if(opcion != null) {
+		//AJUSTAR EL JSP PARA HACER BIEN LAS REDIRECCIONES CON LOS MENSAJES DE ERROR
+		if(opcion == null) {
+			request.setAttribute("opcion", "null");
+		}else {
 			request.removeAttribute("opcion");
 			request.setAttribute("opcion", opcion);
-		}
-		else {
-			request.setAttribute("opcion", "null");
+			if(opcion.equalsIgnoreCase("lectura")) {
+				redireccionar = true;
+			} else if(opcion.equalsIgnoreCase("escritura")){
+				request.setAttribute("datos", "null");
+				if(estadistica != null) {
+					request.removeAttribute("datos");
+					request.setAttribute("datos", estadistica);
+					redireccionar = true;
+				}
+			}
 		}
 		
-		if(request.getParameter("formato")!=null && datos != null && opcion != null) {
+		if(request.getParameter("formato")!=null && redireccionar) {
 			formato = request.getParameter("formato");
 			switch (formato) {
 				case "XLS": {
@@ -80,16 +86,17 @@ public class ServletAccesoDA extends HttpServlet {
 	//1. AÑO
 	//2. HOMBRES
 	//3. MUJERES
-	List<String> CargarDatos(HttpServletRequest request, HttpServletResponse response) {
-		List<String> datos = new ArrayList<>();
+	EstadisticaAnual CargarDatos(HttpServletRequest request, HttpServletResponse response) {
+		List<Integer> datos = new ArrayList<>();
 		for (String string : request.getParameterValues("dato")) {
 			if(string != null && string != "" && isNumeric(string)) {
-				datos.add(string);
+				datos.add(Integer.parseInt(string));
 			} else {
 				return null;
 			}
 		}
-		return datos;
+		EstadisticaAnual estadistica = new EstadisticaAnual(datos.get(0), datos.get(1), datos.get(2));
+		return estadistica;
 	}
 	
 	//MÉTODO PARA COMPROBAR SI ES UN NÚMERO ENTERO

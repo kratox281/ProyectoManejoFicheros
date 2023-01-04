@@ -29,4 +29,9 @@ public class EstadisticaAnual {
 		this.mujeres = mujeres;
 	}
 	
+	//DEVUELVE EL OBJETO COMO UN ARRAY DE STRING
+	public String[] getArrayString() {
+		String[] string = {String.valueOf(getAnio()),String.valueOf(getHombres()),String.valueOf(getMujeres())};
+		return string;
+	}
 }
