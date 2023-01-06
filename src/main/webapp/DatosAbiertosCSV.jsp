@@ -42,30 +42,78 @@ if(opcion.equalsIgnoreCase("escritura") && estadisticaEscritura != null){
 
 %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <style>
+        table{
+            border: 2px;
+            border-style: solid;
+            border-collapse: collapse;
+        }
+        th{
+            font-size: 23px;
+        }
+        td{
+            border: 1px;
+            border-style: solid;
+            padding: 10px;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        section{
+            font-size: large;
+            text-align: center;
+            background-color: #e0e0e0;;
+        }
+        .imagenes{
+            position: fixed;
+            opacity: 20%;
+            top: 12%;
+            left:55%;
+            filter: blur(1px);
+            transform: rotate(20deg);
+        }
+        footer{
+            position: fixed;
+            margin: auto;
+            text-align: center;
+            background-color: gray;
+            color: white;
+            width: 100%;
+            height: 6%;
+            bottom: 0;
+        }
+    </style>
 <head>
-<meta charset="ISO-8859-1">
-<title>Estadísticas en CSV</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos CSV</title>
 </head>
-<body>
-<div style="margin: auto;width: 50%;">
-<h1>DATOS</h1>
-<table border="1">
-<tr>
-<th>Año</th>
-<th>Hombres</th>
-<th>Mujeres</th>
-</tr>
-<%for(EstadisticaAnual estadisticaTabla:estadisticas){
-%>
-<tr>
-<td><%=estadisticaTabla.getAnio()%></td>
-<td><%=estadisticaTabla.getHombres()%></td>
-<td><%=estadisticaTabla.getMujeres()%></td>
-</tr>
-<%}%>
-
-</table>
-</div>
+<body style="background-color: #dbdbdb;">
+	<header>
+		<h1 style="text-align: center;font-size: 45px;">Defunciones</h1>
+	</header>
+	<section>
+		<img class="imagenes" src="https://static.vecteezy.com/system/resources/previews/001/193/565/non_2x/skull-sketch-png.png" 
+	                    style="width: 200px;height: auto;"/>
+		<table style="margin: auto;">
+		<tr>
+			<th>Año</th>
+			<th>Hombres</th>
+			<th>Mujeres</th>
+		</tr>
+		<%for(EstadisticaAnual estadisticaTabla:estadisticas){
+		%>
+		<tr>
+			<td><%=estadisticaTabla.getAnio()%></td>
+			<td><%=estadisticaTabla.getHombres()%></td>
+			<td><%=estadisticaTabla.getMujeres()%></td>
+		</tr>
+		<%}%>
+		</table>
+	</section>
 </body>
+ <footer>
+    <p>© 2022-2023 Acceso a Datos, Estadísticas de Muertes</p>
+ </footer>
 </html>
