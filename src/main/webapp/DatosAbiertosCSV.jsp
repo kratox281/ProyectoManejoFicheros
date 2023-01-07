@@ -44,10 +44,14 @@ if(opcion.equalsIgnoreCase("escritura") && estadisticaEscritura != null){
 <!DOCTYPE html>
 <html lang="en">
     <style>
+    	body{
+    		background-color: #dbdbdb;
+   		}
         table{
             border: 2px;
             border-style: solid;
             border-collapse: collapse;
+            margin: auto;
         }
         th{
             font-size: 23px;
@@ -58,6 +62,10 @@ if(opcion.equalsIgnoreCase("escritura") && estadisticaEscritura != null){
             padding: 10px;
             font-size: 18px;
             font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+        	text-align: center;
+        	font-size: 45px;
         }
         section{
             font-size: large;
@@ -71,6 +79,8 @@ if(opcion.equalsIgnoreCase("escritura") && estadisticaEscritura != null){
             left:55%;
             filter: blur(1px);
             transform: rotate(20deg);
+            width: 200px;
+        	height: auto;
         }
         footer{
             position: fixed;
@@ -89,14 +99,14 @@ if(opcion.equalsIgnoreCase("escritura") && estadisticaEscritura != null){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos CSV</title>
 </head>
-<body style="background-color: #dbdbdb;">
+<body>
 	<header>
-		<h1 style="text-align: center;font-size: 45px;">Defunciones</h1>
+		<h1>Defunciones</h1>
 	</header>
 	<section>
-		<img class="imagenes" src="https://static.vecteezy.com/system/resources/previews/001/193/565/non_2x/skull-sketch-png.png" 
-	                    style="width: 200px;height: auto;"/>
-		<table style="margin: auto;">
+		<img class="imagenes"
+		src="https://static.vecteezy.com/system/resources/previews/001/193/565/non_2x/skull-sketch-png.png"/>
+		<table>
 		<tr>
 			<th>Año</th>
 			<th>Hombres</th>
