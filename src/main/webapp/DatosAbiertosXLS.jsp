@@ -28,8 +28,8 @@
 	<%!ArrayList<String> datosNuevos;%>
 	<%
 	//Recoge los datos insertados en la web de acceso
-	if (request.getServletContext().getAttribute("datos") != null) {
-		datosNuevos = (ArrayList<String>) request.getServletContext().getAttribute("datos");
+	if (request.getServletContext().getAttribute("datosLista") != null) {
+		datosNuevos = (ArrayList<String>) request.getServletContext().getAttribute("datosLista");
 	} else {
 		datosNuevos = new ArrayList();
 		datosNuevos.add("dato 1");
