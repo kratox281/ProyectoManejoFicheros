@@ -9,10 +9,8 @@
 <%@page import="java.nio.file.Path"%>
 <%@page import="com.google.gson.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" errorPage="Error.jsp"%>
     <%
-    JFileChooser j = new JFileChooser();
-    j.showOpenDialog(null);
     JsonParser parser=new JsonParser();
 	Path path=Path.of("C:\\Users\\solor\\Desktop\\Defunciones.json");
 	//Lee todo el contenido del fichero

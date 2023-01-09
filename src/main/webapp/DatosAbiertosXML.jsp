@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" errorPage="Error.jsp"%>
 <%@ page import="mainPackage.EstadisticaAnual"%>
 <%@ page import="xml.LecturaSAX" %>
 <%@ page import="xml.GeneradorDOM" %>

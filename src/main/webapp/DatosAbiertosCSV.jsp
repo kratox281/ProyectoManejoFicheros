@@ -7,7 +7,7 @@
 <%@page import="java.io.FileReader"%>
 <%@page import="mainPackage.EstadisticaAnual"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" errorPage="Error.jsp"%>
 <%@ page import="java.util.List"%>
 <%
 //MANEJO DEL FICHERO
