@@ -29,6 +29,9 @@ public class EstadisticaAnual {
 		this.mujeres = mujeres;
 	}
 	
+	public EstadisticaAnual() {
+		// TODO Auto-generated constructor stub
+	}
 	//DEVUELVE EL OBJETO COMO UN ARRAY DE STRING
 	public String[] getArrayString() {
 		String[] string = {String.valueOf(getAnio()),String.valueOf(getHombres()),String.valueOf(getMujeres())};
