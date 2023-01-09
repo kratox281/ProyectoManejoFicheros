@@ -43,7 +43,6 @@ public class GeneradorDOM {
 		Element aniodef = document.createElement("anio_def");
 		estadistica.appendChild(aniodef);
 		
-		
 			Element anios = document.createElement("anio");
 			anios.appendChild(document.createTextNode(String.valueOf(estadisticaAnualLeido.getAnio())));
 			System.out.println(String.valueOf(estadisticaAnualLeido.getAnio())+"anio ");

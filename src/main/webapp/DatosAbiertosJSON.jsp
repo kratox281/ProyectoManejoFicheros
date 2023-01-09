@@ -12,7 +12,7 @@
     pageEncoding="ISO-8859-1" errorPage="Error.jsp"%>
     <%
     JsonParser parser=new JsonParser();
-	Path path=Path.of("C:\\Users\\solor\\Desktop\\Defunciones.json");
+	Path path=Path.of(System.getProperty("user.dir") + "/Archivos/datos.gob.es/Defunciones.json");
 	//Lee todo el contenido del fichero
 	%>
 <!DOCTYPE html>

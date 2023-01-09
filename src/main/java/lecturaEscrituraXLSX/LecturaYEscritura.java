@@ -23,7 +23,7 @@ public class LecturaYEscritura {
 
 	public LecturaYEscritura() {
 		try {
-			archivo = new File("/ManejoFicheros/Archivos/datos.gob.es/Defunciones.xlsx");
+			archivo = new File(System.getProperty("user.dir") + "/Archivos/datos.gob.es/Defunciones.xlsx");
 			System.out.println(archivo.getAbsolutePath().toString());
 			fis = new FileInputStream(archivo);
 			libro = new XSSFWorkbook(fis);
@@ -46,7 +46,7 @@ public class LecturaYEscritura {
 		while (filas.hasNext()) {
 
 			contadorFilas++;
-			Object[] valores = new Object[3];
+			Object[] valores = new Object[10];
 			Row fila = filas.next();
 
 			Iterator<Cell> celdas = fila.iterator();

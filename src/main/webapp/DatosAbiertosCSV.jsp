@@ -11,7 +11,7 @@
 <%@ page import="java.util.List"%>
 <%
 //MANEJO DEL FICHERO
-File file = new File("Defunciones.csv");
+File file = new File(System.getProperty("user.dir") + "/Archivos/datos.gob.es/Defunciones.csv");
 if(!file.exists()){
 	file.createNewFile();
 }

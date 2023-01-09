@@ -47,7 +47,6 @@
 					  	%>
 					  	<p style="color:red;">*Tienes que completar todos los datos correctamente <br> (todos los campos con * deben estar rellenados)</p>
 					  	<%}%>
-					  	
                 	</td>
                 </tr>
             </tbody>
