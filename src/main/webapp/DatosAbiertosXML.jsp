@@ -63,7 +63,13 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+	<header>
+		<h1>Defunciones</h1>
+	</header>
 <body>
+<section>
+		<img class="imagenes"
+		src="https://static.vecteezy.com/system/resources/previews/001/193/565/non_2x/skull-sketch-png.png"/>
 <%! LecturaSAX lector; %>
 <% lector = new LecturaSAX(); %>
 <%! ArrayList<EstadisticaAnual> estadisticasAnuales; %>
@@ -83,7 +89,7 @@
 	<% estadisticasAnuales = lector.getAniodefs(); %>
 <%}%>
 
-	<table border="1">
+	<table>
 	<tr><td>Año</td><td>Hombres</td><td>Mujeres</td></tr>
 	<% for(EstadisticaAnual estadisticaAnual : estadisticasAnuales) { %>
 		<tr><td><%= estadisticaAnual.getAnio() %></td>
@@ -91,5 +97,9 @@
 		<td><%= estadisticaAnual.getMujeres() %></td></tr>
 	<% } %>
 	</table>
+</section>
 </body>
+ <footer>
+    <p>© 2022-2023 Acceso a Datos, Estadísticas de Muertes</p>
+ </footer>
 </html>

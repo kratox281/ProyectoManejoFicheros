@@ -35,7 +35,7 @@ public class LecturaSAX {
 		
 		
 		//Definir estructura XML
-		File file = new File("C:\\Users\\casmarru\\Pictures\\ProyectoManejoFicheros\\Archivos\\datos.gob.es\\Defunciones.xml");
+		File file = new File(System.getProperty("user.dir") + "/Archivos/datos.gob.es/Defunciones.xml");
 		HandlerSAXLector handler = new HandlerSAXLector();
 		
 		//Empieza a leer el documento

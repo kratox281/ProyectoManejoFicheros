@@ -78,7 +78,7 @@ public class GeneradorDOM {
 		Transformer transformer = factoria.newTransformer();
 		
 		Source source = new DOMSource(document);
-		File file = new File("C:\\Users\\casmarru\\Pictures\\ProyectoManejoFicheros\\Archivos\\datos.gob.es\\Defunciones.xml");
+		File file = new File(System.getProperty("user.dir") + "/Archivos/datos.gob.es/Defunciones.xml");
 		FileWriter fw = new FileWriter(file);
 		PrintWriter pw = new PrintWriter(fw);
 		Result result = new StreamResult(pw);

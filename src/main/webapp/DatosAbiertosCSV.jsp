@@ -91,6 +91,7 @@ if(opcion.equalsIgnoreCase("escritura") && estadisticaEscritura != null){
             width: 100%;
             height: 6%;
             bottom: 0;
+            opacity: 20%;
         }
     </style>
 <head>
@@ -123,7 +124,7 @@ if(opcion.equalsIgnoreCase("escritura") && estadisticaEscritura != null){
 		</table>
 	</section>
 </body>
- <footer>
-    <p>© 2022-2023 Acceso a Datos, Estadísticas de Muertes</p>
- </footer>
+	 <footer>
+	    <p>© 2022-2023 Acceso a Datos, Estadísticas de Muertes</p>
+	 </footer>
 </html>
