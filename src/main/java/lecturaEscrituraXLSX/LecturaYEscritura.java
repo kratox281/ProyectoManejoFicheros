@@ -82,9 +82,14 @@ public class LecturaYEscritura {
 			//Insertamos en el mapa
 			datos.put(contadorFilas, valores);
 		}
-
+		
+		for (Integer row : datos.keySet()) {
+			Object[] lineas = datos.get(row);
+			for (Object object : lineas) {
+				System.out.println(object);
+			}
+		}
 		return datos;
-
 	}
 
 	public void escritura(ArrayList<String> datos) {
@@ -106,6 +111,5 @@ public class LecturaYEscritura {
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
-
 	}
 }

@@ -62,6 +62,12 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<header>
+		<h1>Defunciones</h1>
+</header>
+<section>
+		<img class="imagenes"
+		src="https://static.vecteezy.com/system/resources/previews/001/193/565/non_2x/skull-sketch-png.png"/>
 <body>
 	<%!LecturaYEscritura lYE = new LecturaYEscritura();%>
 	<%!String eleccion;%>
@@ -105,16 +111,17 @@
 		<%
 		mapa = lYE.lectura();
 		Set<Integer> set = mapa.keySet();
-
 		for (Integer clave : set) {
 		%>
 		<tr>
 			<%
 			Object[] datos = mapa.get(clave);
 			for (Object dato : datos) {
+				if(dato != null){
 			%>
 			<td><%=dato.toString()%></td>
 			<%
+				}
 			}
 			%>
 		</tr>
@@ -122,5 +129,9 @@
 		}
 		%>
 	</table>
+</section>
 </body>
+<footer>
+	    <p>© 2022-2023 Acceso a Datos, Estadísticas de Muertes</p>
+	 </footer>
 </html>

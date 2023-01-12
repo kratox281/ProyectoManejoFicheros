@@ -32,6 +32,7 @@ else opcion = null;
 			estadisticas.add(new EstadisticaAnual(Integer.valueOf(linea[0]),Integer.valueOf(linea[1]),Integer.valueOf(linea[2])));
 		}
 	}
+	
 //ESCRITURA DE CSV
 if(opcion.equalsIgnoreCase("escritura") && estadisticaEscritura != null){
 	CSVWriter writer = new CSVWriter(new FileWriter(file,true));
